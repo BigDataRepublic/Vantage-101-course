@@ -1,15 +1,16 @@
-from preprocessing import PreProcessor
-from featurizing import Featurizer
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import make_pipeline
+
+from preprocessing import PreProcessor
+from featurizing import Featurizer
 
 
 def train_pipeline():
     rfc = RandomForestClassifier()
     preprocessor = PreProcessor()
     featurizer = Featurizer()
-    
+
     X_train, X_test, y_train, y_test = preprocessor.run()
     y_train = LabelEncoder().fit_transform(y_train)
     featurization_pipeline = featurizer.run(X_train)
