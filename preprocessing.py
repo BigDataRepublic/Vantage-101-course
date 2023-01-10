@@ -21,6 +21,9 @@ class PreProcessor(Runner):
     def load_data(self):
         df = pd.read_csv(self.csv_path)
         # Convert column names to lowecase for convenience
+        return self._prepreprocessing(df)
+
+    def _prepreprocessing(self, df):
         df.columns = [x.lower() for x in df.columns]
 
         # Dropping rows with a missing target variable
