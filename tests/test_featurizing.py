@@ -1,9 +1,8 @@
 import pytest
-import pandas as pd
 
-from preprocessing import PreProcessor
-from featurizing import Featurizer
-from base import Runner
+from src.preprocessing import PreProcessor
+from src.featurizing import Featurizer
+from src.base import Runner
 
 
 @pytest.fixture

@@ -1,8 +1,8 @@
 import pytest
 import pandas as pd
 
-from preprocessing import PreProcessor
-from base import Runner
+from src.preprocessing import PreProcessor
+from src.base import Runner
 
 
 @pytest.fixture

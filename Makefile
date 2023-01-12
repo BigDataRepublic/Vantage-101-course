@@ -6,7 +6,7 @@ lint:
 .PHONY: test
 test:
 	python3 -m pytest --version
-	python3 -m pytest tests
+	python3 -m pytest src/tests
 .PHONY: black
 black:
 	python3 -m black --version
