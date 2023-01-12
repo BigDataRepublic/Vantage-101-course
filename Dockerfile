@@ -1,14 +1,13 @@
 # Create base image
-FROM continuumio/miniconda3 AS system_build
+FROM python:3.8
 # Set the working dir in the container
 WORKDIR /vantage101
 
 RUN apt-get update
-RUN apt-get install zip unzip
 
 # Copy the content of the repo to workdir
 COPY . .
-RUN conda env create -f env.yml
+RUN pip install -r requirements.txt
 
 # Run the app when container is built
-ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "v101", "uvicorn main:app --reload"]
+CMD ["uvicorn", "main:app", "--reload"]
