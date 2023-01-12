@@ -1,6 +1,6 @@
 from abc import ABC
 
-from base import Runner
+from src.base import Runner
 
 
 def test_runner_init():
